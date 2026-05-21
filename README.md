@@ -15,6 +15,10 @@ Foi realizada uma Análise Exploratória de Dados (EDA) utilizando Python (Panda
 ### 1. A Curva de Aprendizado (Visão Temporal)
 O primeiro passo foi analisar a taxa de sucesso ao longo dos anos. A análise revela que o sucesso inicial era nulo, mas a curva de aprendizado empírica gerou uma escalada rápida rumo à previsibilidade.
 
+# Agrupando a taxa de sucesso por ano
+sucesso_ano = df.groupby('Year')['Class'].mean() * 100
+sns.lineplot(x=sucesso_ano.index, y=sucesso_ano.values, marker='o', color='#2980b9', linewidth=2.5)
+
 *<img width="3000" height="1500" alt="grafico2_temporal" src="https://github.com/user-attachments/assets/d1749d6c-3705-46c2-becf-cde9b5778077" />*
 
 ### 2. O Risco Físico: Peso vs. Experiência
